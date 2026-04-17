@@ -17,9 +17,9 @@ export async function generateStaticParams() {
 
 function ProductFallback() {
     return (
-        <div className="py-16">
+        <div className="py-8 md:py-12 lg:py-16">
             <div className="wrapper">
-                <p className="text-muted-foreground">Loading product…</p>
+                <p className="text-sm md:text-base text-muted-foreground">Loading product…</p>
             </div>
         </div>
     )
@@ -37,33 +37,33 @@ async function ProductContent({
     }
     const {name,description,websiteUrl,tags,voteCount,tagline}=product
     return ( 
-        <div className="py-16">
+        <div className="py-8 md:py-12 lg:py-16">
             <div className="wrapper">
-                <Link href={'/'} className="flex items-center gap-2 text-muted-foreground hover:text-foreground mb-8 transition-colors">
-                    <ArrowLeftIcon className="size-4"/>Back to Explore
+                <Link href={'/'} className="flex items-center gap-2 text-xs md:text-sm text-muted-foreground hover:text-foreground mb-6 md:mb-8 transition-colors">
+                    <ArrowLeftIcon className="size-3 md:size-4"/>Back to Explore
                 </Link>
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-                    <div className="lg:col-span-2 space-y-6">
-                        <div className="flex items-start gap-6">
-                            <div className="flex-1 min-w-0">
-                                <div className="mb-6">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12">
+                    <div className="lg:col-span-2 space-y-4 md:space-y-6">
+                        <div className="flex flex-col items-start gap-4 md:gap-6">
+                            <div className="flex-1 min-w-0 w-full">
+                                <div className="mb-4 md:mb-6">
                                     <SectionHeader title={name} icon={StarIcon} description={tagline||""}/>
-                                    <div className="flex flex-wrap gap-2">
+                                    <div className="flex flex-wrap gap-1 md:gap-2">
                                         {tags?.map((tag)=>(
-                                            <Badge variant={'secondary'} key={tag}>{tag}</Badge>
+                                            <Badge variant={'secondary'} key={tag} className="text-xs md:text-sm">{tag}</Badge>
                                         ))}
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="prose prose-neutral dark:prose-invert max-w-none ">
-                            <h2 className="text-xl font-semibold mb-4">About</h2>
-                            <p className="text-muted-foreground leading-relaxed">{description}</p>
+                        <div className="prose prose-neutral dark:prose-invert max-w-none w-full">
+                            <h2 className="text-lg md:text-xl font-semibold mb-2 md:mb-4">About</h2>
+                            <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{description}</p>
                         </div>
                         {/*  */}
-                        <div className="rounded-lg bg-primary/10 border p-6">
-                            <h2 className="text-lg font-semibold mb-4">Product Details</h2>
-                            <div className="space-y-3">
+                        <div className="rounded-lg bg-primary/10 border p-4 md:p-6">
+                            <h2 className="text-base md:text-lg font-semibold mb-3 md:mb-4">Product Details</h2>
+                            <div className="space-y-2 md:space-y-3">
                                 {
                                 [
                                     {
@@ -79,10 +79,10 @@ async function ProductContent({
                                         icon:UserIcon
                                     }
                                 ].map(({label,value,icon:Icon})=>(
-                                    <div key={label} className="flex items-center gap-1">
-                                        {Icon&&<Icon className="size-4 text-muted-foreground"/>}
-                                        <span className="text-md text-muted-foreground">{label}</span>
-                                        <p className="font-semibold">{value}</p>
+                                    <div key={label} className="flex items-center gap-1 md:gap-2 flex-wrap">
+                                        {Icon&&<Icon className="size-3 md:size-4 text-muted-foreground flex-shrink-0"/>}
+                                        <span className="text-xs md:text-base text-muted-foreground">{label}</span>
+                                        <p className="font-semibold text-xs md:text-base break-all">{value}</p>
                                     </div>
                                 ))
                                 }
@@ -91,25 +91,25 @@ async function ProductContent({
                     </div>
                     {/* Right Side Column */}
                     <div className="lg:col-span-1">
-                        <div className="sticky top-24 space-y-4">
-                            <div className="border rounded-lg p-6 bg-background">
-                                <div className="text-center mb-6">
-                                    <p className="text-sm text-muted-foreground mb-2">
+                        <div className="sticky top-20 md:top-24 space-y-3 md:space-y-4">
+                            <div className="border rounded-lg p-4 md:p-6 bg-background">
+                                <div className="text-center mb-4 md:mb-6">
+                                    <p className="text-xs md:text-sm text-muted-foreground mb-2">
                                         Support this product
                                     </p>
                                     <VotingButton voteCount={voteCount} productId={product.id}/>
                                     {voteCount>100&&
-                                    <div className="pt-6 border-t">
-                                        <Badge className="w-full py-4 rounded-xl justify-center">
-                                            <span className="text-lg font-bold">🔥Featured Product</span>
+                                    <div className="pt-4 md:pt-6 border-t">
+                                        <Badge className="w-full py-2 md:py-4 rounded-xl justify-center text-xs md:text-base">
+                                            <span className="font-bold">🔥Featured Product</span>
                                         </Badge>
                                     </div>}
                                 </div>
                             </div>
                             {
                                 websiteUrl&&(
-                                    <Button asChild className="w-full rounded-lg" variant={'outline'}>
-                                        <a href={websiteUrl} target="_blank" rel="noopener noreferrer">Visit Website <ExternalLinkIcon className="size-4"/></a>
+                                    <Button asChild className="w-full rounded-lg text-xs md:text-sm" variant={'outline'}>
+                                        <a href={websiteUrl} target="_blank" rel="noopener noreferrer">Visit Website <ExternalLinkIcon className="size-3 md:size-4 ml-1"/></a>
                                     </Button>
                                 )
                             }

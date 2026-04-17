@@ -8,7 +8,7 @@ export default function Page(){
   return(
     <div>
       <HeroLandingPage/>
-        <br className="border-primary mx-20 border border-dashed"/>
+        <div className="border-primary border border-dashed my-8 md:my-12 lg:my-16"/>
 
       {/* <Suspense fallback={<ProductSkeleton/>}> */}
         <FeaturedProduct/>

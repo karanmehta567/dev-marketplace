@@ -6,9 +6,9 @@ import { ShipWheelIcon } from "lucide-react";
 export default async function ExplorePage(){
     const products=await getProductsItem()
     return (
-        <div className="py-20">
+        <div className="py-8 md:py-12 lg:py-20">
             <div className="wrapper">
-                <div className="mb-12">
+                <div className="mb-8 md:mb-12">
                     <SectionHeader 
                         title="Explore All Products" 
                         icon={ShipWheelIcon} 

@@ -21,44 +21,40 @@ export default function Header(){
     // const isSignedIn:boolean=true
     return (
         <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
-            <div className="wrapper px-12">
-                <div className="flex items-center h-16 justify-between">
+            <div className="wrapper">
+                <div className="flex items-center h-16 justify-between gap-4">
                     <Logo/>
-                    <nav className="flex items-center gap-2">
-                        <Link href={'/'} className="flex items-center gap-2 px-3 py-2 text-sm font-medium hover:bg-muted/50 text-muted-foreground hover:text-foreground transition-colors">
-                            <HomeIcon className="size-5"/>
-                            <span>Home</span>
+                    <nav className="hidden md:flex items-center gap-1">
+                        <Link href={'/'} className="flex items-center gap-2 px-3 py-2 text-sm font-medium hover:bg-muted/50 text-muted-foreground hover:text-foreground transition-colors rounded-md">
+                            <HomeIcon className="size-4 md:size-5"/>
+                            <span className="hidden lg:inline">Home</span>
                         </Link>
-                        <Link href={'/explore'} className="flex items-center gap-2 px-3 py-2 text-sm font-medium hover:bg-muted/50 text-muted-foreground hover:text-foreground transition-colors">
-                            <ShipWheel className="size-5"/>
-                            <span>Explore</span>
+                        <Link href={'/explore'} className="flex items-center gap-2 px-3 py-2 text-sm font-medium hover:bg-muted/50 text-muted-foreground hover:text-foreground transition-colors rounded-md">
+                            <ShipWheel className="size-4 md:size-5"/>
+                            <span className="hidden lg:inline">Explore</span>
                         </Link>
                     </nav>
-                    <nav className="flex items-center gap-2">
-                    <Suspense fallback={<div><Loader2Icon className="size-4"/>Loading Auth.....</div>}>
+                    <nav className="flex items-center gap-1 md:gap-2">
+                    <Suspense fallback={<div><Loader2Icon className="size-3 md:size-4"/>Loading...</div>}>
                     <Show when="signed-out">
                         <>
                             <SignUpButton>
-                                <Button className="px-2 py-3 cursor-pointer">Sign Up</Button>
+                                <Button className="px-2 md:px-3 py-2 text-xs md:text-sm cursor-pointer">Sign Up</Button>
                             </SignUpButton>
                             <SignInButton>
-                            <Button className="px-2 py-3 cursor-pointer" variant={'ghost'}>Sign In</Button>
+                            <Button className="px-2 md:px-3 py-2 text-xs md:text-sm cursor-pointer" variant={'ghost'}>Sign In</Button>
                             </SignInButton>
                         </>
                     </Show>
                     </Suspense>
-                    <Suspense fallback={<div><Loader2Icon className="size-4"/>Loading Auth.....</div>}>
+                    <Suspense fallback={<div><Loader2Icon className="size-3 md:size-4"/>Loading...</div>}>
                         <Show when="signed-in">
-                            <Button asChild>
+                            <Button asChild size={'sm'} className="text-xs md:text-sm">
                                 <Link href={'/submit'}>
-                                    <SparklesIcon className="size-4"/>
-                                    Submit Project
+                                    <SparklesIcon className="size-3 md:size-4"/>
+                                    <span className="hidden sm:inline">Submit</span>
                                 </Link>
                             </Button>
-                        {/* <Button variant={'ghost'}>
-                            <UserIcon/>
-                        </Button> */}
-                        <br className="ml-2"/>
                         <CustomUserButton/>
                         </Show>
                     </Suspense>
