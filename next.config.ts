@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: "D:/marketplace/my-app",
   },
+  cacheComponents:true
 };
 
 export default nextConfig;
