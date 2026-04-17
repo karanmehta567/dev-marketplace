@@ -9,7 +9,7 @@ Built with a powerful full-stack architecture, DevSpace enables seamless project
 Upload and showcase your projects \
 Create and manage organizations \
 Discover trending and featured projects \
-Upvote / downvote projects to support others \
+Upvote / downvote projects to support others 
 
 🛠️ Admin Controls \
 Approve or reject submitted projects \
@@ -17,7 +17,7 @@ Maintain quality and relevance of listings \
 📊 Discovery & Engagement \
 📅 Recently Launched — Projects from the last 7 days \
 ⭐ Featured Projects — Highlighted top-quality work \
-🔥 Community Voting System — Upvote/downvote mechanism \
+🔥 Community Voting System — Upvote/downvote mechanism 
 
 🧱 Tech Stack \
 Layer	Technology \
@@ -33,7 +33,7 @@ Create a .env file and add: \
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY= \
 CLERK_SECRET_KEY= \
 DATABASE_URL= \
-NEXT_PUBLIC_APP_URL=http://localhost:3000 \
+NEXT_PUBLIC_APP_URL=http://localhost:3000 
 
 📁 Project Structure
 /app            → App router pages & layouts \
@@ -56,13 +56,13 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000 \
 🏆 Leaderboards & trending rankings \
 🤝 Contributing
 
-Contributions are welcome!
+Contributions are welcome! \
 
-📄 License
-This project is licensed under the MIT License.
+📄 License \
+This project is licensed under the MIT License. 
 
-💡 Inspiration
-DevSpace is built to empower developers by giving them a platform to:
-Showcase their work
+💡 Inspiration \
+DevSpace is built to empower developers by giving them a platform to: \
+Showcase their work \
 Gain visibility
 Discover amazing projects from the community
